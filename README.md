@@ -15,6 +15,7 @@ docker build -t wholetale/girder:test-harness
 This image contains:
 * Python 3.7
 * CMake
+* Girder 2.5.0 (as source)
 * coverage
 * flake8
 
