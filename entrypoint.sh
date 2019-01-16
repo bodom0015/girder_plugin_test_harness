@@ -10,7 +10,9 @@
 set -e
 
 # Install WholeTale plugin dependencies
+pip install -r plugins/wholetale/requirements.txt
 pip install -r plugins/wholetale/requirements-dev.txt
+pip install passlib
 
 # Run CMake
 cmake \
