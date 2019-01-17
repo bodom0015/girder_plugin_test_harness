@@ -28,9 +28,8 @@ While everything else is baked into the Docker image here, we should run an addi
 
 You can run an instance MongoDB with the following command:
 ```bash
-docker run -itd --name=test-mongo -p 27101:27017 -v ${HOME}/mongodata/test:/data/db mongo
+docker run -itd --name=test-mongo -p 27017:27017 -v ${HOME}/mongodata/test:/data/db mongo
 ```
-NOTE: We do not use the default port here, but instead use `27101`, as this is how the plugin tests have been configured.
 
 
 ### Running the Tests

@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.6
 
 # Install CMake
 RUN apt-get -qq update && \
@@ -23,3 +23,8 @@ ENV PYTHON="/usr/local/bin/python3" \
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "" ]
+
+RUN git clone https://github.com/whole-tale/girder_wt_data_manager /girder/plugins/wt_data_manager && \
+    pip install -r plugins/wt_data_manager/requirements.txt && \
+    git clone https://github.com/whole-tale/globus_handler /girder/plugins/globus_handler && \
+    pip install -r plugins/globus_handler/requirements.txt

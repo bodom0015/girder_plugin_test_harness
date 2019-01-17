@@ -2,7 +2,7 @@
 #
 # Runs the test suite on the Girder Wholetale Plugin in an isolated environment
 #
-# Prerequisite: docker run -itd --name=test-mongo -p 27101:27017 -v $(pwd)/mongodata/test:/data/db mongo
+# Prerequisite: docker run -itd --name=test-mongo -p 27017:27017 -v $(pwd)/mongodata/test:/data/db mongo
 # Build: docker build -t wholetale/girder:test-harness
 # Usage: docker run --rm -it -v /home/ubuntu/deploy-dev/src/wholetale/:/girder/plugins/wholetale wholetale/girder:test-harness
 
