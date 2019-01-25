@@ -9,7 +9,7 @@ RUN apt-get -qq update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
-RUN git clone https://github.com/whole-tale/girder /girder
+RUN git clone https://github.com/whole-tale/girder /girder --recurse-submodules -b stable
 WORKDIR /girder
 RUN pip install -r requirements-dev.txt --no-cache-dir && \
     pip install flake8 coverage --no-cache-dir
@@ -24,7 +24,8 @@ COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "" ]
 
-RUN git clone https://github.com/whole-tale/girder_wt_data_manager /girder/plugins/wt_data_manager && \
+RUN rm -rf /girder/plugins/wt_data_manager /girder/plugins/globus_handler && \
+    git clone https://github.com/whole-tale/girder_wt_data_manager /girder/plugins/wt_data_manager -b stable && \
     pip install -r plugins/wt_data_manager/requirements.txt && \
     git clone https://github.com/whole-tale/globus_handler /girder/plugins/globus_handler && \
     pip install -r plugins/globus_handler/requirements.txt
