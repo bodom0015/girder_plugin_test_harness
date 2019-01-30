@@ -12,7 +12,7 @@ set -e
 # Install WholeTale plugin dependencies
 pip install -r plugins/wholetale/requirements.txt
 pip install -r plugins/wholetale/requirements-dev.txt
-pip install passlib
+pip install passlib pyOpenSSL
 
 # Run CMake
 cmake \
@@ -30,3 +30,6 @@ cmake \
 
 # Run CTest
 ctest -VV
+
+# Run a particular set of tests by regex
+#ctest -VV -R 'image'
