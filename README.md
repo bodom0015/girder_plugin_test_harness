@@ -10,7 +10,7 @@ Runs the test suite on the Girder Wholetale Plugin in an isolated environment
 ## Building the Image
 Use the usual command to build up our Docker image:
 ```bash
-docker build -t wholetale/girder:test-harness
+docker build -t wholetale/girder:test-harness .
 ```
 This image contains:
 * Python 3.7
